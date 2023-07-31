@@ -1,0 +1,27 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap");
+.Container {
+    font-family: "Inter", sans-serif;
+
+    &__initialPoke {
+        text-align: center;
+
+        &__title {
+            color: #355070;
+            font-size: 60px;
+        }
+
+        &__paragraph {
+            font-size: 18px;
+            color: #495057;
+        }
+        &__search {
+            display: flex;
+            justify-content: center;
+        }
+
+        &__input {
+            max-width: 559px;
+            width: 100%;
+        }
+    }
+}
