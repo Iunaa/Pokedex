@@ -6,12 +6,14 @@ const instance = axios.create({
 });
 
 
- export function AllPokemons() {
-    instance.get("pokemon").then(
+export function AllPokemons() {
+    let pokemons = instance.get("pokemon").then(
         async function (response){
             let result = await response;
+            console.log(result)
+            return result.data.results;       
         }
     )
+    return pokemons
 }
 
-AllPokemons()
