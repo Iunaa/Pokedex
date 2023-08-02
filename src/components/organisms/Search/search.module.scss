@@ -8,20 +8,12 @@
         &__title {
             color: #3c096c;
             font-size: 60px;
+            margin-top: 20px;
         }
 
-        &__paragraph {
-            font-size: 18px;
-            color: #495057;
-        }
         &__search {
             display: flex;
             justify-content: center;
-        }
-
-        &__input {
-            max-width: 559px;
-            width: 100%;
         }
     }
 }
