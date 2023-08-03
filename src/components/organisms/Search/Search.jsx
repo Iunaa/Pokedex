@@ -3,7 +3,7 @@ import style from "../Search/search.module.scss";
 import iconsearch from "../../../assets/img/icons8-search-30.png";
 import { AllPokemons } from '../../../api';
 
-export default function Search() {
+export default function Search({children}) {
     const [pokemons, setPokemons] = useState([]);
 
   async function getPokemons() {     //serve pra mostrar que essa função serve para puxar dados
@@ -21,6 +21,7 @@ export default function Search() {
      <div className={style.Container}>
         <div className={style.Container__initialPoke}>
             <h1 className={style.Container__initialPoke__title}>Pokedéx</h1>
+            {children}
             
             
         </div>
