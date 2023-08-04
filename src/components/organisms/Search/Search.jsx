@@ -1,31 +1,20 @@
-import React, { useEffect, useState } from 'react'
-import style from "../Search/search.module.scss";
-import iconsearch from "../../../assets/img/icons8-search-30.png";
+import React, { useEffect, useState } from 'react';
 import { AllPokemons } from '../../../api';
+import logo from "../../../assets/img/logo.png";
+import style from "../Search/search.module.scss";
 
-export default function Search({children}) {
-    const [pokemons, setPokemons] = useState([]);
-
-  async function getPokemons() {     //serve pra mostrar que essa função serve para puxar dados
-    const pokemons = await AllPokemons()   //o await serve para esperar para puxar os dados
-    console.log(pokemons);  
-
-  }
-
-    useEffect(() => {
-        getPokemons()
-    }, [])
-
+export default function Search({ children }) {
+  
   return (
-     <>
-     <div className={style.Container}>
+    <>
+      <div className={style.Container}>
         <div className={style.Container__initialPoke}>
-            <h1 className={style.Container__initialPoke__title}>Pokedéx</h1>
-            {children}
-            
-            
+          <img className={style.Container__initialPoke__title} src={logo} />
+          {children}
+
+
         </div>
-    </div>
-     </>
+      </div>
+    </>
   )
 }

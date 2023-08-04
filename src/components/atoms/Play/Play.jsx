@@ -17,7 +17,7 @@ export default function Play() {
              let audio = document.getElementById("audio");
             audio.play();
         }} className={style.control__play}>&#9658;</p>
-        <audio autoplay id="audio" preload="auto">
+        <audio  id="audio" preload="auto">
             <source src={audio} type="audio/mpeg" />
         </audio>
     </div>
