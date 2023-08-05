@@ -1,19 +1,24 @@
-import axios from 'axios';
+export const fetchPokemon = async (id) => {
+    let word = isNaN(id)
+    let name = '';
 
-const instance = axios.create({
-  baseURL: 'https://pokeapi.co/api/v2',
+    if (word) {
+        name = id.toLowerCase()
+    }
 
-});
+    try {
+        const APIResponse = await fetch(`https://pokeapi.co/api/v2/pokemon/${word ? name : id}`);
 
-
-export function AllPokemons() {
-    let pokemons = instance.get("pokemon").then(
-        async function (response){
-            let result = await response;
-            console.log(result)
-            return result.data.results;       
+        if (APIResponse.status === 404) {
+            return {}
+        } else {
+            const data = await APIResponse.json();
+            if (data !== undefined) {
+                return data;
+            }
         }
-    )
-    return pokemons
-}
+    } catch (error) {
+        //algum erro que não seja o 404 será exibido no console
+    }
 
+}
