@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Background_image from "../../../assets/img/pokedex.png";
 import style from "../Pokedex/pokedex.module.scss";
 
-export default function Pokedex({ children }) {
+export default function Pokedex({ children, id, pokemon, setInput }) {
+  const [search, setSearch] = useState('')
 
   return (
     <>
@@ -10,7 +11,7 @@ export default function Pokedex({ children }) {
         <div className={style.Pokedex__fundo}>
           {Object.keys(pokemon).length !== 0 && (<img src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/${id}.gif`} className={style.Pokedex__fundo__animation} />)}
           <h1 className={style.Pokedex__fundo__data}>
-            <span className={style.Pokedex__fundo__number}>{id}</span>
+            <span className={style.Pokedex__fundo__number}>{id} - </span>
             {Object.keys(pokemon).length !== 0 && (<span className={style.Pokedex__fundo__name}>{pokemon.name}</span>)}
 
           </h1>

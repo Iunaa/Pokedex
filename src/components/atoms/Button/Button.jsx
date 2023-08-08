@@ -1,10 +1,17 @@
-import style from "../Button/button.module.scss"
+import style from "../Button/button.module.scss";
 
-function Button () {
-    return(
+function Button({ pokemon, id, setInput, setPokemon, setId }) {
+    return (
         <div className={style.buttons}>
-            <button className={style.buttons__prev}>Prev &lt; </button>
-            <button className={style.buttons__next}>Next &gt;</button>
+            <button onClick={() => {
+                setInput('');
+                setId(--id);
+
+            }} className={style.buttons__prev}>Prev &lt; </button>
+            <button onClick={() => {
+                setInput('');
+                setId(++id);
+            }} className={style.buttons__next}>Next &gt;</button>
         </div>
     );
 }

@@ -1,10 +1,9 @@
-import React, { useEffect, useState } from 'react';
-import { AllPokemons } from '../../../api';
+import React from 'react';
 import logo from "../../../assets/img/logo.png";
 import style from "../Search/search.module.scss";
 
-export default function Search({ children }) {
-  
+function Search({ children }) {
+
   return (
     <>
       <div className={style.Container}>
@@ -18,3 +17,4 @@ export default function Search({ children }) {
     </>
   )
 }
+export default Search
