@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Background_image from "../../../assets/img/pokedex.png";
 import style from "../Pokedex/pokedex.module.scss";
 
-export default function Pokedex({ children, id, pokemon, setInput }) {
+function Pokedex({ children, id, pokemon, setInput }) {
   const [search, setSearch] = useState('')
 
   return (
@@ -40,3 +40,5 @@ export default function Pokedex({ children, id, pokemon, setInput }) {
     </>
   )
 }
+
+export default Pokedex
