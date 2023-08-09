@@ -8,11 +8,12 @@ export const fetchPokemon = async (id) => {
 
     try {
         const APIResponse = await fetch(`https://pokeapi.co/api/v2/pokemon/${word ? name : id}`);
-
+        
         if (APIResponse.status === 404) {
             return {}
         } else {
             const data = await APIResponse.json();
+            console.log(data);
             if (data !== undefined) {
                 return data;
             }

@@ -5,13 +5,16 @@
         display: inline-block;
         margin-top: 50px;
         position: relative;
+
         &__img {
             width: 100%;
             margin: 0 auto;
+
             @media (max-width: 446px) {
                 width: 60%;
             }
         }
+
         &__animation {
             position: absolute;
             bottom: 55%;
@@ -19,28 +22,30 @@
             transform: translate(-63%, 20%);
             height: 18%;
         }
+
         &__data {
             position: absolute;
             font-weight: 600;
             color: #aaa;
             top: 54.5%;
             right: 27%;
-            font-size: clamp(
-                8px,
-                5vw,
-                25px
-            ); //recebe 3 paramentros (min,desejável,max)
+            font-size: clamp(8px,
+                    5vw,
+                    25px); //recebe 3 paramentros (min,desejável,max)
         }
+
         &__name {
             color: #3a444d;
             text-transform: capitalize;
         }
+
         &__form {
             position: absolute;
             width: 65%;
             top: 65%;
             left: 13.5%;
         }
+
         &__search {
             width: 100%;
             padding: 4%;

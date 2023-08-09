@@ -10,10 +10,12 @@ function Pokedex({ children, id, pokemon, setInput }) {
       <div className={style.Pokedex}>
         <div className={style.Pokedex__fundo}>
           {Object.keys(pokemon).length !== 0 && (<img src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/${id}.gif`} className={style.Pokedex__fundo__animation} />)}
+
           <h1 className={style.Pokedex__fundo__data}>
+
             <span className={style.Pokedex__fundo__number}>{id} - </span>
             {Object.keys(pokemon).length !== 0 && (<span className={style.Pokedex__fundo__name}>{pokemon.name}</span>)}
-
+            {Object.keys(pokemon).length == 0 && (<span className={style.Pokedex__fundo__name}>Not found!</span>)}
           </h1>
           <form onSubmit={(e) => {
             e.preventDefault();
